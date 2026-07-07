@@ -13,7 +13,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y gcc sqlite3 && rm -rf /var/lib/apt/lists/*
 
 # Install required Python packages
-RUN pip install fastapi uvicorn sqlalchemy passlib bcrypt pyjwt websockets apscheduler python-dotenv yfinance vaderSentiment beautifulsoup4
+RUN pip install fastapi uvicorn sqlalchemy passlib bcrypt pyjwt websockets apscheduler python-dotenv yfinance vaderSentiment beautifulsoup4 pandas scikit-learn joblib
 
 # Copy backend files
 COPY . .
