@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.env
+market_hub.db
+mock_inbox.txt
+frontend/node_modules/
+frontend/dist/
+static/
+.DS_Store

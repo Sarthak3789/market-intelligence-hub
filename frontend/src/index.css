@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-brown: #4e342e;
+  --color-brand-dark: #201a18;
+  --color-brand-cream: #fdfbf7;
+  --color-brand-accent: #d7ccc8;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-brand-dark);
+  background-image: url('/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--color-brand-dark);
+}
+
+/* Hide scrollbar for the marquee */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes marquee-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-horizontal {
+  animation: marquee-horizontal 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.animate-marquee-horizontal:hover {
+  animation-play-state: paused;
+}

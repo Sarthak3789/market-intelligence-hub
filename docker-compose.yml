@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  market-intel:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount the database file so data persists across container restarts
+      - ./market_hub.db:/app/market_hub.db
+    env_file:
+      - .env
+    restart: unless-stopped
