@@ -32,6 +32,7 @@ app = FastAPI(title="Market Intelligence Hub")
 
 @app.on_event("startup")
 def start_scheduler():
+    import seed_demo # ensure demo user exists
     scheduler = BackgroundScheduler()
     scheduler.add_job(run_sentiment_check, 'interval', minutes=60)
     scheduler.start()
